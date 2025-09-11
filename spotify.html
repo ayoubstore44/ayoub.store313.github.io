@@ -1,0 +1,224 @@
+<!-- spotify.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spotify - AYOUB STORE</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Header -->
+<header class="header">
+  <div class="container header-container">
+    <a href="index.html" class="logo-link">
+      <img src="https://i.ibb.co/cc9XJJgM/IMG-4849.jpg" alt="Logo" class="logo" />
+      <span class="logo-text">AYOUB STORE</span>
+    </a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="freefire.html" class="nav-link">Free Fire</a></li>
+          <li><a href="netflix.html" class="nav-link">Netflix</a></li>
+          <li><a href="spotify.html" class="nav-link active">Spotify</a></li>
+          <li><a href="games.html" class="nav-link">Games</a></li>
+          <li><a href="index.html#features" class="nav-link nav-link-gold">Why Choose Us</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+<!-- Hero Section with Clickable Banner -->
+<section class="hero">
+  <a href="#categories" class="hero-link">
+    <img src="https://i.ibb.co/M5ss0wzp/IMG-4843-1.jpg" alt="Banner" class="hero-banner" />
+    <div class="hero-content">
+      <h1>WELCOME TO AYOUB STORE</h1>
+      <p>Your one-stop shop for digital entertainment and gaming accounts.</p>
+      <span class="btn btn-gold">Shop Now</span>
+    </div>
+  </a>
+</section>
+
+
+ <!-- Products Section -->
+<section class="products container">
+  <h1>Spotify Subscription Plans</h1>
+  <div class="cards-grid subscription-grid">
+
+    <article class="card product-card">
+      <img src="https://i.ibb.co/0p6T7pBn/9f5edc36-eb4d-414a-8447-10514f2bc224-cover.png" alt="Spotify 1 Month" />
+      <h2>1 Month</h2>
+      <p>Enjoy ad-free music streaming for 1 month.</p>
+      <p class="price">Price: 35 MAD</p>
+      <a href="#" class="btn btn-gold btn-whatsapp">Buy on WhatsApp</a>
+    </article>
+
+    <article class="card product-card">
+      <img src="https://i.ibb.co/0p6T7pBn/9f5edc36-eb4d-414a-8447-10514f2bc224-cover.png" alt="Spotify 6 Months" />
+      <h2>6 Months</h2>
+      <p>Save with a 6-month Spotify Premium subscription.</p>
+      <p class="price">Price: 90 MAD</p>
+      <a href="#" class="btn btn-gold btn-whatsapp">Buy on WhatsApp</a>
+    </article>
+
+    <article class="card product-card">
+      <img src="https://i.ibb.co/0p6T7pBn/9f5edc36-eb4d-414a-8447-10514f2bc224-cover.png" alt="Spotify 12 Months" />
+      <h2>12 Months</h2>
+      <p>Best value! Enjoy Spotify Premium for 1 year.</p>
+      <p class="price">Price: 160 MAD</p>
+      <a href="#" class="btn btn-gold btn-whatsapp">Buy on WhatsApp</a>
+    </article>
+
+  </div>
+</section>
+
+
+<script>
+  document.querySelectorAll('.btn-whatsapp').forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      const productCard = button.closest('.product-card');
+      const productName = productCard.querySelector('h2').innerText;
+      const price = productCard.querySelector('.price').innerText;
+      const message = `Hello, I want to buy:\n*${productName}*\n${price}`;
+      const phone = '212632337784'; // Replace with your WhatsApp number
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    });
+  });
+</script>
+
+<!-- Free Fire Service Info -->
+<section class="service-info container">
+  <h2>Spotify Info</h2>
+  <p>
+Spotify is a music streaming platform that gives you access to over 100 million songs, 5 million+ podcasts, and audiobooks. It works on smartphones, computers, smart TVs, and even car systems.
+  </p>
+
+  <ul class="service-details">
+    <li>✅ Daily Mixes 🎵 (personalized playlists)</li>
+    <li>✅ Podcasts & audiobooks all in one app</li>
+    <li>✅ Instant delivery after purchase</li>
+    <li>✅ Full support if any issue arises</li>
+  </ul>
+</section>
+
+
+<!-- Reviews (spotify) -->
+<section class="reviews container">
+  <h2>Customer Reviews</h2>
+  <div class="review-list">
+    <div class="review-card">
+      <img src="https://i.pravatar.cc/60?img=5" alt="Lina" class="review-photo" />
+      <div class="review-text">
+        <h3>Lina</h3>
+        <p>Spotify Premium works perfectly — no ads!</p>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <img src="https://i.pravatar.cc/60?img=8" alt="Omar" class="review-photo" />
+      <div class="review-text">
+        <h3>Omar</h3>
+        <p>Quick delivery and great price.</p>
+        <div class="stars">★★★★☆</div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <img src="https://i.pravatar.cc/60?img=14" alt="Salma" class="review-photo" />
+      <div class="review-text">
+        <h3>Salma</h3>
+        <p>Very happy — easy and fast setup.</p>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Us Section -->
+<section class="contact-us container">
+  <h2>Contact Us</h2>
+  <form 
+    id="contactForm" 
+    action="https://formspree.io/f/mgvlqezy" 
+    method="POST" 
+    class="contact-form"
+  >
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="text" name="number" placeholder="Your Phonenumber" required />
+    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+    <button type="submit" class="btn btn-gold">Send Message</button>
+    <p id="formMessage" style="margin-top:0.5rem; display:none;"></p>
+  </form>
+</section>
+<script>
+const form = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault(); // prevent page refresh
+
+  const formData = new FormData(form);
+  const action = form.action;
+
+  try {
+    const response = await fetch(action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      formMessage.style.display = 'block';
+      formMessage.style.color = '#ffd54a';
+      formMessage.textContent = '✅ Thank you! Your message has been sent.';
+      form.reset();
+
+      // Hide message after 5 seconds
+      setTimeout(() => { formMessage.style.display = 'none'; }, 5000);
+    } else {
+      const data = await response.json();
+      formMessage.style.display = 'block';
+      formMessage.style.color = 'red';
+      formMessage.textContent = data.errors ? data.errors.map(err => err.message).join(', ') : 'Oops! Something went wrong.';
+
+      // Hide error after 5 seconds
+      setTimeout(() => { formMessage.style.display = 'none'; }, 5000);
+    }
+  } catch (error) {
+    formMessage.style.display = 'block';
+    formMessage.style.color = 'red';
+    formMessage.textContent = 'Oops! Network error. Try again later.';
+
+    setTimeout(() => { formMessage.style.display = 'none'; }, 5000);
+  }
+});
+</script>
+
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/212632337784" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+
+
+  <!-- Footer -->
+   <footer class="footer">
+    <div class="socials">
+      <a href="https://www.facebook.com/profile.php?id=100082171275649&mibextid=LQQJ4d"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/ayoub_store31?igsh=Y2pwb2UycnRtZjIy&utm_source=qr"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/212632337784"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p>&copy; 2025 AYOUB STORE. All rights reserved.</p>
+  </footer>
+</body>
+</html>
