@@ -1,0 +1,383 @@
+/* style.css — unified for all pages (products, videos, reviews, contact form) */
+
+/* Reset & base */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #070707;
+  color: #f3f3f3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container */
+.container { width: 92%; max-width: 1200px; margin: 0 auto; }
+
+/* Links & buttons */
+a { color: inherit; text-decoration: none; }
+.btn {
+  display: inline-block; padding: 0.6rem 1.2rem; border-radius: 8px;
+  font-weight: 700; cursor: pointer; text-align: center;
+  transition: transform .15s ease, background-color .15s ease;
+}
+.btn-gold {
+  background: linear-gradient(180deg,#ffd54a,#d4af37); color:#0b0b0b; border: none;
+}
+.btn-gold:hover { transform: translateY(-3px); background: #e6c252; }
+
+/* Header / Nav */
+.header { 
+  background: #0b0b0b; 
+  border-bottom: 1px solid rgba(212,175,55,0.06); 
+  position: sticky; 
+  top: 0; 
+  z-index: 50; 
+}
+
+.header-container { 
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between; 
+  padding:1rem 0; 
+  gap:1rem; 
+}
+
+.logo { 
+  height:48px; 
+  display:block; 
+  user-select:none; 
+}
+
+/* Logo text next to the logo */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem; /* space between logo and text */
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffd54a;
+  white-space: nowrap;
+}
+
+.nav-list { 
+  list-style:none; 
+  display:flex; 
+  gap:0.6rem; 
+  align-items:center; 
+  margin-left:auto; 
+}
+
+.nav-link {
+  padding:0.45rem 0.8rem; 
+  border-radius:6px; 
+  color:#eaeaea; 
+  font-weight:600;
+}
+
+.nav-link:hover { 
+  background:#111; 
+  color:#ffd54a; 
+}
+
+.nav-link.active { 
+  background:#ffd54a; 
+  color:#0b0b0b; 
+}
+
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+  color: #ffd700;
+}
+
+.hero-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.7); /* dark overlay effect */
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-gold {
+  background-color: #ffd700;
+  color: #000;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+
+/* Grid helper used for products & categories */
+.cards-grid {
+  display:grid; gap:1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-items:start;
+  margin-top:1rem;
+}
+
+/* Generic card */
+.card {
+  background:#0f0f10; border-radius:12px; overflow:hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  padding:0.9rem; transition:transform .18s ease, box-shadow .18s ease;
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 14px 32px rgba(0,0,0,0.7); }
+
+/* Product card content */
+.product-card img,
+.product-card video {
+  width:100%; display:block; object-fit:cover;
+  border-radius:8px; margin-bottom:0.85rem;
+  background:#000;
+}
+
+.product-card video { height:200px; }
+.product-card img { height:200px; }
+
+.card h2 { color:#ffd54a; font-size:1.15rem; margin-bottom:0.5rem; }
+.card p { color:#d7d7d7; font-size:0.98rem; margin-bottom:0.6rem; }
+.price { color:#ffd54a; font-weight:800; margin-bottom:0.75rem; }
+
+/* Make video a little responsive */
+@media (max-width:900px) {
+  .product-card video, .product-card img { height:170px; }
+}
+@media (max-width:600px) {
+  .product-card video, .product-card img { height:150px; }
+}
+
+.service-info {
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+.service-info h2 {
+  font-size: 1.8rem;
+  color: #ffd54a;
+  margin-bottom: 1rem;
+}
+
+.service-info p {
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  color: #d7d7d7;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.service-details {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.service-details li {
+  text-align: left;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  color: #fff;
+  position: relative;
+  padding-left: 1.8rem;
+}
+
+.service-details li::before {
+  content: "✔";
+  color: #ffd54a;
+  position: absolute;
+  left: 0;
+}
+
+
+/* Reviews - unified: supports .review-list and .reviews-grid */
+.reviews { padding:3rem 0; text-align:center; }
+.reviews h2 { color:#ffd54a; font-size:1.8rem; margin-bottom:1.25rem; }
+
+.review-list,
+.reviews-grid {
+  display:grid;
+  gap:1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  justify-items:center;
+  align-items:start;
+}
+
+/* Each review card */
+.review-card {
+  background:#111; color:#fff; padding:1rem; border-radius:12px;
+  width:100%; max-width:320px; text-align:center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.7);
+  display:flex; gap:0.9rem; align-items:center; justify-content:flex-start;
+}
+.review-card img,
+.review-card .review-photo,
+.review-card .review-avatar {
+  width:60px; height:60px; border-radius:50%; object-fit:cover;
+  border:2px solid #ffd54a; flex-shrink:0;
+}
+.review-card .review-text {
+  text-align:left; flex:1;
+}
+.review-card h3 { margin:0; color:#ffd54a; font-size:1rem; margin-bottom:0.25rem; }
+.review-card p { margin:0 0 0.5rem 0; color:#d7d7d7; font-size:0.95rem; }
+.stars { color:#ffd54a; font-weight:800; margin-top:0.3rem; }
+
+/* If you used older stacked review markup (image above text), handle that too */
+.review-card.stack {
+  flex-direction:column; text-align:center; justify-content:center;
+}
+.review-card.stack img { margin-bottom:0.6rem; }
+
+/* Features Section */
+.features {
+  padding: 3rem 0;
+  text-align: center;
+  background: #111; /* match reviews background */
+}
+
+.features h2.section-title {
+  color: #ffd54a; /* gold highlight */
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid layout */
+.features-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  justify-items: center;
+  align-items: start;
+}
+
+/* Feature card */
+.feature-card {
+  background: #0f0f10; /* match product cards */
+  color: #fff;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.7);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.7);
+}
+
+/* Feature icons */
+.feature-icon {
+  font-size: 2rem;
+  color: #ffd54a;
+  margin-bottom: 0.8rem;
+}
+
+/* Feature titles */
+.feature-card h3 {
+  color: #ffd54a;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Feature description */
+.feature-card p {
+  color: #d7d7d7;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+
+/* Contact form centered + small */
+.contact-us { padding:3rem 0; text-align:center; }
+.contact-form {
+  margin:0 auto; max-width:420px; width:100%;
+  background:#0f0f10; padding:1.15rem; border-radius:12px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.7);
+  display:flex; flex-direction:column; gap:0.75rem;
+}
+.contact-form input,
+.contact-form textarea {
+  background:#080808; border:1px solid rgba(212,175,55,0.12);
+  color:#fff; padding:0.75rem; border-radius:8px; outline:none;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color:#9b9b9b; }
+.contact-form button { align-self:flex-end; }
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 28px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background: #1ebe5d;
+}
+
+
+/* Footer */
+.footer { margin-top:auto; padding:2rem 0 1rem; background:#0b0b0b; color:#cfcfcf; }
+.footer .socials { text-align:center; margin-bottom:0.6rem; }
+.footer .socials a { margin:0 0.5rem; color:#ffd54a; font-size:1.2rem; }
+
+/* Responsive tweaks */
+@media (max-width:680px) {
+  .nav-list { gap:0.35rem; flex-wrap:wrap; justify-content:center; }
+  .review-card { max-width:100%; }
+  .review-card .review-text { text-align:left; }
+}
