@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix - AYOUB STORE</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-container">
+    <a href="index.html" class="logo-link">
+      <img src="https://i.ibb.co/cc9XJJgM/IMG-4849.jpg" alt="Logo" class="logo" />
+      <span class="logo-text">AYOUB STORE</span>
+    </a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="freefire.html" class="nav-link">Free Fire</a></li>
+          <li><a href="netflix.html" class="nav-link active">Netflix</a></li>
+          <li><a href="spotify.html" class="nav-link">Spotify</a></li>
+          <li><a href="games.html" class="nav-link">Games</a></li>
+          <li><a href="index.html#features" class="nav-link nav-link-gold">Why Choose Us</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+<!-- Hero Section with Clickable Banner -->
+<section class="hero">
+  <a href="#categories" class="hero-link">
+    <img src="https://i.ibb.co/M5ss0wzp/IMG-4843-1.jpg" alt="Banner" class="hero-banner" />
+    <div class="hero-content">
+      <h1>WELCOME TO AYOUB STORE</h1>
+      <p>Your one-stop shop for digital entertainment and gaming accounts.</p>
+      <span class="btn btn-gold">Shop Now</span>
+    </div>
+  </a>
+</section>
+
+
+<!-- Products -->
+<section class="products container">
+  <h1>Netflix Accounts</h1>
+  <div class="cards-grid">
+
+    <article class="card product-card">
+      <img src="https://i.ibb.co/G4bGrtNn/Netflix-Symbol.png" alt="Netflix 1">
+      <h2>1 Month Account</h2>
+      <p>Unlimited streaming for 30 days.</p>
+      <p class="price">Price: 25 MAD</p>
+      <a href="#" class="btn btn-gold btn-whatsapp">Buy on WhatsApp</a>
+    </article>
+
+    <article class="card product-card">
+      <img src="https://i.ibb.co/G4bGrtNn/Netflix-Symbol.png" alt="Netflix 6 Months">
+      <h2>6 Months Account</h2>
+      <p>Half-year unlimited access.</p>
+      <p class="price">Price: 80 MAD</p>
+      <a href="#" class="btn btn-gold btn-whatsapp">Buy on WhatsApp</a>
+    </article>
+
+    <article class="card product-card">
+      <img src="https://i.ibb.co/G4bGrtNn/Netflix-Symbol.png" alt="Netflix 12 Months">
+      <h2>12 Months Account</h2>
+      <p>Full-year unlimited access.</p>
+      <p class="price">Price: 150 MAD</p>
+      <a href="#" class="btn btn-gold btn-whatsapp">Buy on WhatsApp</a>
+    </article>
+
+  </div>
+</section>
+
+
+<script>
+  document.querySelectorAll('.btn-whatsapp').forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      const productCard = button.closest('.product-card');
+      const productName = productCard.querySelector('h2').innerText;
+      const price = productCard.querySelector('.price').innerText;
+      const message = `Hello, I want to buy:\n*${productName}*\n${price}`;
+      const phone = '212632337784'; // Replace with your WhatsApp number
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    });
+  });
+</script>
+
+<!-- Free Fire Service Info -->
+<section class="service-info container">
+  <h2>Netflix Info</h2>
+  <p>
+  Netflix is a subscription-based streaming service that lets you watch movies, TV shows, documentaries, and original productions (called Netflix Originals) online. You can stream on smartphones, laptops, smart TVs, tablets, and game consoles.
+  </p>
+
+  <ul class="service-details">
+    <li>✅ Streaming devices (Chromecast, Fire Stick, Apple TV</li>
+    <li>✅ Consoles (PlayStation, Xbox)</li>
+    <li>✅ Instant delivery after purchase</li>
+    <li>✅ Full support if any issue arises</li>
+  </ul>
+</section>
+
+
+<!-- Reviews (netflix) -->
+<section class="reviews container">
+  <h2>Customer Reviews</h2>
+  <div class="reviews-grid">
+    <article class="review-card">
+      <img src="https://i.pravatar.cc/60?img=7" alt="Imane">
+      <div class="review-text">
+        <h3>Imane</h3>
+        <p>Instant delivery, account works perfectly. Very satisfied!</p>
+        <div class="stars">★★★★★</div>
+      </div>
+    </article>
+
+    <article class="review-card">
+      <img src="https://i.pravatar.cc/60?img=22" alt="Karim">
+      <div class="review-text">
+        <h3>Karim</h3>
+        <p>Good prices and reliable service.</p>
+        <div class="stars">★★★★☆</div>
+      </div>
+    </article>
+
+    <article class="review-card">
+      <img src="https://i.pravatar.cc/60?img=31" alt="Sara">
+      <div class="review-text">
+        <h3>Sara</h3>
+        <p>Works great — no problems. Recommended seller.</p>
+        <div class="stars">★★★★★</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+ <!-- Contact Us Section -->
+<section class="contact-us container">
+  <h2>Contact Us</h2>
+  <form 
+    id="contactForm" 
+    action="https://formspree.io/f/mgvlqezy" 
+    method="POST" 
+    class="contact-form"
+  >
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="text" name="number" placeholder="Your Phonenumber" required />
+    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+    <button type="submit" class="btn btn-gold">Send Message</button>
+    <p id="formMessage" style="margin-top:0.5rem; display:none;"></p>
+  </form>
+</section>
+<script>
+const form = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault(); // prevent page refresh
+
+  const formData = new FormData(form);
+  const action = form.action;
+
+  try {
+    const response = await fetch(action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      formMessage.style.display = 'block';
+      formMessage.style.color = '#ffd54a';
+      formMessage.textContent = '✅ Thank you! Your message has been sent.';
+      form.reset();
+
+      // Hide message after 5 seconds
+      setTimeout(() => { formMessage.style.display = 'none'; }, 5000);
+    } else {
+      const data = await response.json();
+      formMessage.style.display = 'block';
+      formMessage.style.color = 'red';
+      formMessage.textContent = data.errors ? data.errors.map(err => err.message).join(', ') : 'Oops! Something went wrong.';
+
+      // Hide error after 5 seconds
+      setTimeout(() => { formMessage.style.display = 'none'; }, 5000);
+    }
+  } catch (error) {
+    formMessage.style.display = 'block';
+    formMessage.style.color = 'red';
+    formMessage.textContent = 'Oops! Network error. Try again later.';
+
+    setTimeout(() => { formMessage.style.display = 'none'; }, 5000);
+  }
+});
+</script>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/212632337784" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+
+
+  <!-- Footer -->
+   <footer class="footer">
+    <div class="socials">
+      <a href="https://www.facebook.com/profile.php?id=100082171275649&mibextid=LQQJ4d"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/ayoub_store31?igsh=Y2pwb2UycnRtZjIy&utm_source=qr"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/212632337784"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p>&copy; 2025 AYOUB STORE. All rights reserved.</p>
+  </footer>
+</body>
+</html>
