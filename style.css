@@ -381,3 +381,43 @@ a { color: inherit; text-decoration: none; }
   .review-card { max-width:100%; }
   .review-card .review-text { text-align:left; }
 }
+
+/* Extra mobile fixes */
+@media (max-width: 600px) {
+  /* Hero section smaller */
+  .hero {
+    height: 320px;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Nav tweaks */
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+
+  /* Cards: force 1 per row */
+  .cards-grid,
+  .reviews-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Text scaling */
+  .service-info h2,
+  .reviews h2,
+  .features h2.section-title {
+    font-size: 1.4rem;
+  }
+  .card h2,
+  .feature-card h3,
+  .review-card h3 {
+    font-size: 1rem;
+  }
+}
