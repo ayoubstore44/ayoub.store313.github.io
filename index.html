@@ -9,23 +9,23 @@
 </head>
 <body>
 <header class="header">
-  <div class="container header-container">
-    <a href="index.html" class="logo-link">
-      <img src="https://i.ibb.co/cc9XJJgM/IMG-4849.jpg" alt="Logo" class="logo" />
-       <span class="logo-text">AYOUB STORE</span>
+  <div class="header-container">
+    <a href="#" class="logo-link">
+      <img src="logo.png" alt="Logo" class="logo">
+      <span class="logo-text">AYOUB STORE</span>
     </a>
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="freefire.html" class="nav-link">Free Fire</a></li>
-          <li><a href="netflix.html" class="nav-link">Netflix</a></li>
-          <li><a href="spotify.html" class="nav-link">Spotify</a></li>
-          <li><a href="games.html" class="nav-link">Games</a></li>
-          <li><a href="#features" class="nav-link">Why Choose Us</a></li> <!-- New item -->
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <button class="menu-toggle">☰</button>
+    <ul class="nav-list">
+      <li><a href="#" class="nav-link active">Home</a></li>
+      <li><a href="#" class="nav-link">Free Fire</a></li>
+      <li><a href="#" class="nav-link">Netflix</a></li>
+      <li><a href="#" class="nav-link">Spotify</a></li>
+      <li><a href="#" class="nav-link">Games</a></li>
+      <li><a href="#" class="nav-link">Why Choose Us</a></li>
+    </ul>
+  </div>
+</header>
+
 
   <main>
 <!-- Hero Section with Clickable Banner -->
@@ -217,6 +217,15 @@ form.addEventListener('submit', async function(e) {
 <a href="https://wa.me/212632337784" class="whatsapp-float" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
+
+    <script>
+  const toggle = document.querySelector(".menu-toggle");
+  const navList = document.querySelector(".nav-list");
+  toggle.addEventListener("click", () => {
+    navList.classList.toggle("active");
+  });
+</script>
+
 
 
 
