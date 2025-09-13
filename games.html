@@ -47,8 +47,9 @@
   <h1>Games & Accounts</h1>
   <div class="cards-grid">
 
+    <!-- Normal Products -->
     <article class="card product-card">
-      <img src="https://i.ibb.co/XrVNpwW0/3337-gta5-grand-theft-auto-v-official-logo.png" alt="Game Account 1" />
+      <img src="https://i.ibb.co/XrVNpwW0/3337-gta5-grand-theft-auto-v-official-logo.png" alt="GTA V" />
       <h2>GTA V</h2>
       <p>GTA V ON LAPTOPS.</p>
       <p class="price">Price: 100 MAD</p>
@@ -58,10 +59,9 @@
     <article class="card product-card">
       <video width="300" height="200" controls>
         <source src="https://dl.dropboxusercontent.com/scl/fi/320z26dkg64lwr7qru93z/509b1882-92b3-4719-ad51-55824ce2c617.mov?rlkey=ke9p8pbc23876yk4ild2dykas&st=ij8p299t&dl=0" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
       <h2>Pes Account #1</h2>
-      <p>Pes Account,.</p>
+      <p>Pes Account</p>
       <p class="price">Price: 1000 MAD</p>
       <a href="#" class="btn btn-gold btn-whatsapp">Buy on WhatsApp</a>
     </article>
@@ -69,38 +69,95 @@
     <article class="card product-card">
       <video width="300" height="200" controls>
         <source src="https://dl.dropboxusercontent.com/scl/fi/895l1zjqpotegcx7kxgoz/690396986336748468.mp4?rlkey=vrgqm4grg8gun6jcu6q8gk2pi&st=3fmejbi3&dl=0" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
       <h2>Pubg Mobile Account #1</h2>
-      <p>Pes Account,.</p>
+      <p>Pubg Account</p>
       <p class="price">Price: 800 MAD</p>
       <a href="#" class="btn btn-gold btn-whatsapp">Buy on WhatsApp</a>
     </article>
 
     <article class="card product-card">
-      <img src="https://i.ibb.co/CKRnBMnR/18e08f7058c02b5c6de336b928d91ec214d839c76e188acb923659c0cc0ecb32-200.webp" alt="Game Account 4" />
+      <img src="https://i.ibb.co/CKRnBMnR/18e08f7058c02b5c6de336b928d91ec214d839c76e188acb923659c0cc0ecb32-200.webp" alt="FIFA 25" />
       <h2>FIFA 25</h2>
-      <p>we provide best acconts fifa 25 and coins acconts start from 100 MAD.</p>
+      <p>We provide best accounts FIFA 25 and coins accounts start from 100 MAD.</p>
+      <p class="price">Price: 100 MAD</p>
       <a href="#" class="btn btn-gold btn-whatsapp">Buy on WhatsApp</a>
+    </article>
+
+    <!-- Free Fire Diamonds -->
+    <article class="card product-card">
+      <img src="https://i.ibb.co/qMfzBGpL/Diamantes-free-fire-GC-1-300x300.png" alt="Free Fire Diamonds" />
+      <h2>Free Fire Diamonds</h2>
+      <p>Select your diamond package</p>
+      <select id="diamonds" class="diamond-select">
+        <option value="100">100 Diamonds - 10 MAD</option>
+        <option value="200">200 Diamonds - 20 MAD</option>
+        <option value="400">400 Diamonds - 35 MAD</option>
+        <option value="570">570 Diamonds - 45 MAD</option>
+        <option value="1000">1000 Diamonds - 85 MAD</option>
+        <option value="1500">1500 Diamonds - 120 MAD</option>
+        <option value="2200">2200 Diamonds - 160 MAD</option>
+        <option value="3000">3000 Diamonds - 230 MAD</option>
+        <option value="4000">4000 Diamonds - 350 MAD</option>
+        <option value="10000">10000 Diamonds - 550 MAD</option>
+      </select>
+      <a id="orderBtn" class="btn btn-gold btn-whatsapp">Buy on WhatsApp</a>
+    </article>
+
+    <!-- VIP Subscription -->
+    <article class="card product-card vip-card">
+      <img src="https://i.ibb.co/FLdVSFN1/pngtree-creative-vip-diamond-font-png-image-2627274.jpg" alt="VIP Subscription" />
+      <h2>VIP Subscription</h2>
+      <p>Choose your subscription plan</p>
+      <select id="vipPlan" class="diamond-select">
+        <option value="7">7 days - 25 MAD</option>
+        <option value="30">30 days - 100 MAD</option>
+      </select>
+      <a id="vipOrderBtn" class="btn btn-gold btn-whatsapp">Subscribe on WhatsApp</a>
     </article>
 
   </div>
 </section>
 
-
 <script>
-  document.querySelectorAll('.btn-whatsapp').forEach(button => {
-    button.addEventListener('click', function(e) {
-      e.preventDefault();
-      const productCard = button.closest('.product-card');
-      const productName = productCard.querySelector('h2').innerText;
-      const price = productCard.querySelector('.price').innerText;
-      const message = `Hello, I want to buy:\n*${productName}*\n${price}`;
-      const phone = '212632337784'; // Replace with your WhatsApp number
-      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
-    });
+const phone = '212632337784'; // WhatsApp number
+
+// WhatsApp for all products
+document.querySelectorAll('.btn-whatsapp').forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+    const card = button.closest('.product-card');
+    const name = card.querySelector('h2').innerText;
+    const select = card.querySelector('select');
+    let message = '';
+
+    if (select) {
+      // Diamonds
+      if (select.id === 'diamonds') {
+        const prices = {
+          100: "10 MAD", 200: "20 MAD", 400: "35 MAD", 570: "45 MAD",
+          1000: "85 MAD", 1500: "120 MAD", 2200: "160 MAD",
+          3000: "230 MAD", 4000: "350 MAD", 10000: "550 MAD"
+        };
+        const value = select.value;
+        message = `Hello, I want ${value} Diamonds (${prices[value]})`;
+      }
+      // VIP
+      else if (select.id === 'vipPlan') {
+        const prices = {7:"25 MAD",30:"100 MAD"};
+        const value = select.value;
+        message = `Hello, I want VIP Subscription (${value} day(s) - ${prices[value]})`;
+      }
+    } else {
+      // Normal products
+      const price = card.querySelector('.price') ? card.querySelector('.price').innerText : '';
+      message = `Hello, I want to buy ${name} ${price}`;
+    }
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
   });
+});
 </script>
 
 <!-- Free Fire Service Info -->
