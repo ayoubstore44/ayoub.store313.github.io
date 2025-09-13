@@ -226,7 +226,44 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   left: 0;
 }
+/* 🎨 Style for diamond select */
+.diamond-select {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ffd54a;
+  background: #0b0b0b;
+  color: #ffd54a;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0.6rem 0 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
+.diamond-select:hover {
+  background: #111;
+  border-color: #e6c252;
+}
+
+.diamond-select:focus {
+  outline: none;
+  box-shadow: 0 0 6px rgba(255, 213, 74, 0.6);
+}
+
+/* ✨ Animated price */
+#diamondPrice {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffd54a;
+  margin: 0.5rem 0 1rem;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+#diamondPrice.fade {
+  opacity: 0;
+}
 
 /* Reviews - unified: supports .review-list and .reviews-grid */
 .reviews { padding:3rem 0; text-align:center; }
